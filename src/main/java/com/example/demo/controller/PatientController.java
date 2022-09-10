@@ -35,7 +35,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/byDate")
-    public List<Patient> findAllByDateOfBirthIsBetween(@RequestParam(value = "dateOfBirth") @DateTimeFormat(pattern="yyyy/MM/dd") Date begin, @RequestParam(value = "dateOfBirth2") @DateTimeFormat(pattern="yyyy/MM/dd") Date end){
+    public List<Patient> findAllByDateOfBirthIsBetween(@RequestParam(value = "begin") @DateTimeFormat(pattern="yyyy/MM/dd") Date begin, @RequestParam(value = "end") @DateTimeFormat(pattern="yyyy/MM/dd") Date end){
         return patientService.findPatientBetweenBirth(begin, end);
     }
 

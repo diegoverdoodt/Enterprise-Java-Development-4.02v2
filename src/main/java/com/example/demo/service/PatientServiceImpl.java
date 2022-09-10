@@ -48,11 +48,12 @@ public class PatientServiceImpl implements PatientService{
         return patientRepository.findAllByDateOfBirthBetween(begin, end);
     }
 
-
+    @Override
     public List<Patient> findPatientsDepartmentAdmittedBy(Department department){
         return patientRepository.findAllByAdmittedBy_Department(department);
     }
 
+    @Override
     public List<Patient> findPatientsAdmittedStatus(Status status){
         return patientRepository.findAllByAdmittedBy_Status(status);
     }

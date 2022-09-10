@@ -42,6 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeRepository.findAll();
     }
 
+    @Override
     public List<Employee> findByStatus(Status status){
 
         return employeeRepository.findAllByStatus(status);
