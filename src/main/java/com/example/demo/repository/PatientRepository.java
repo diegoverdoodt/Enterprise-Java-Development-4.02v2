@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
 
-    //List<Patient> findAllByDateOfBirthBetweenBeginAndEnd(Date begin, Date end);
+    List<Patient> findAllByDateOfBirthBetween(Date begin, Date end);
 
     List<Patient> findAllByAdmittedBy_Department(Department department);
 

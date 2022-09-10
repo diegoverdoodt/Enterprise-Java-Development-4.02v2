@@ -20,7 +20,7 @@ public interface PatientService {
 
     List<Patient> list();
 
-    //List<Patient> findPatientBetweenBirth(Date begin,Date end);
+    List<Patient> findPatientBetweenBirth(Date begin, Date end);
 
     List<Patient> findPatientsDepartmentAdmittedBy(Department department);
 

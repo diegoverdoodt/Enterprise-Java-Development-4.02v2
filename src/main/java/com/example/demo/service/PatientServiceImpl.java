@@ -44,9 +44,9 @@ public class PatientServiceImpl implements PatientService{
         return patientRepository.findAll();
     }
 
-    /*public List<Patient> findPatientBetweenBirth(Date begin, Date end) {
-        return patientRepository.findAllByDateOfBirthBetweenBeginAndEnd(begin, end);
-    }*/
+    public List<Patient> findPatientBetweenBirth(Date begin, Date end) {
+        return patientRepository.findAllByDateOfBirthBetween(begin, end);
+    }
 
 
     public List<Patient> findPatientsDepartmentAdmittedBy(Department department){
