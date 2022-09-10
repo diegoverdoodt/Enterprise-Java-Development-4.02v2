@@ -1,0 +1,59 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Department;
+import com.example.demo.model.Patient;
+import com.example.demo.model.Status;
+import com.example.demo.repository.PatientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.Date;
+import java.util.List;
+
+@Service
+public class PatientServiceImpl implements PatientService{
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+
+    @Override
+    public Patient get(String id) {
+        Integer intId = Integer.parseInt(id);
+        return patientRepository.findById(intId).get();
+    }
+
+    @Override
+    public Patient save(Patient patient) {
+        return null;
+    }
+
+    @Override
+    public Patient update(String id, Patient patient) {
+        return null;
+    }
+
+    @Override
+    public void delete(Patient patient) {
+
+    }
+
+    @Override
+    public List<Patient> list() {
+        return patientRepository.findAll();
+    }
+
+    /*public List<Patient> findPatientBetweenBirth(Date begin, Date end) {
+        return patientRepository.findAllByDateOfBirthBetweenBeginAndEnd(begin, end);
+    }*/
+
+
+    public List<Patient> findPatientsDepartmentAdmittedBy(Department department){
+        return patientRepository.findAllByAdmittedBy_Department(department);
+    }
+
+    public List<Patient> findPatientsAdmittedStatus(Status status){
+        return patientRepository.findAllByAdmittedBy_Status(status);
+    }
+}
